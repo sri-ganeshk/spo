@@ -6,7 +6,7 @@ import { WavyBackgroundDemo } from "./components/WavyBackgroundDemo";
 export default function Home() {
     return (
         <div className=" ">      
-            <WavyBackgroundDemo />
+            <GoogleGeminiEffectDemo/>
             <HeroParallaxDemo/>
         </div>    
         );
