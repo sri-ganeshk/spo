@@ -69,64 +69,6 @@ export function Appbar() {
                 >
                   Products
                 </Button>
-                {active === "Products" && (
-                  <div className="absolute top-full left-0 mt-2 p-4 bg-black border border-neutral-700 rounded shadow-lg z-10">
-                    <div className="text-sm grid grid-cols-2 gap-10 text-white">
-                      <div className="flex flex-col items-center">
-                        <Link href="https://algochurn.com">
-                          <img
-                            src="https://assets.aceternity.com/demos/algochurn.webp"
-                            alt="Algochurn"
-                            className="h-12 w-12 object-cover mb-2"
-                          />
-                          <span className="font-bold">Algochurn</span>
-                        </Link>
-                        <p className="text-xs text-white text-center">
-                          Prepare for tech interviews like never before.
-                        </p>
-                      </div>
-                      <div className="flex flex-col items-center">
-                        <Link href="https://tailwindmasterkit.com">
-                          <img
-                            src="https://assets.aceternity.com/demos/tailwindmasterkit.webp"
-                            alt="Tailwind Master Kit"
-                            className="h-12 w-12 object-cover mb-2"
-                          />
-                          <span className="font-bold">Tailwind Master Kit</span>
-                        </Link>
-                        <p className="text-xs text-white text-center">
-                          Production ready Tailwind css components for your next project.
-                        </p>
-                      </div>
-                      <div className="flex flex-col items-center">
-                        <Link href="https://gomoonbeam.com">
-                          <img
-                            src="https://assets.aceternity.com/demos/Screenshot+2024-02-21+at+11.51.31%E2%80%AFPM.png"
-                            alt="Moonbeam"
-                            className="h-12 w-12 object-cover mb-2"
-                          />
-                          <span className="font-bold">Moonbeam</span>
-                        </Link>
-                        <p className="text-xs text-white text-center">
-                          Never write from scratch again. Go from idea to blog in minutes.
-                        </p>
-                      </div>
-                      <div className="flex flex-col items-center">
-                        <Link href="https://userogue.com">
-                          <img
-                            src="https://assets.aceternity.com/demos/Screenshot+2024-02-21+at+11.47.07%E2%80%AFPM.png"
-                            alt="Rogue"
-                            className="h-12 w-12 object-cover mb-2"
-                          />
-                          <span className="font-bold">Rogue</span>
-                        </Link>
-                        <p className="text-xs text-white text-center">
-                          Respond to government RFPs, RFIs and RFQs 10x faster using AI.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                )}
               </div>
 
               {/* Pricing */}
