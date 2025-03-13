@@ -10,8 +10,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             
             <NavbarDemo />
             
-            
+            <div className="pt-18">
             {children}
+            </div>
+            
             
             </body>
         </html>
