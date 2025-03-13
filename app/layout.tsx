@@ -1,7 +1,7 @@
 // app/layout.tsx
 import './globals.css';
 import React from 'react';
-import NavbarDemo from './components/navbar';
+import {Appbar} from './components/navbar';
 import RainAnimation from './components/Raineffect';
 
 export default function RootLayout({
@@ -15,7 +15,7 @@ export default function RootLayout({
       <body style={{ position: "relative", zIndex: 1 }}>
       <RainAnimation />
         <div ></div>
-        <NavbarDemo />
+        <Appbar />
         {children}
       </body>
     </html>
