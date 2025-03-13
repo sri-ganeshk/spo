@@ -63,7 +63,7 @@ const HomePage: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-black px-8 pt-24 text-white">
+    <div className="min-h-screen px-8 pt-24 text-white">
       <div className="mb-8 flex justify-center">
         <input
           type="text"
