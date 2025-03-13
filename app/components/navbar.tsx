@@ -6,9 +6,8 @@ import Link from "next/link";
 
 export default function NavbarDemo() {
   return (
-    <div className="relative w-full flex items-center justify-center ">
+    <div className=" ">
       <Navbar className="top-2" />
-      
     </div>
   );
 }
