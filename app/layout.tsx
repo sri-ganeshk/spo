@@ -12,8 +12,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head />
-      <body >
-        <div ></div>
+      <body style={{ position: "relative", zIndex: 1 }}>
+       <RainAnimation />
         <Appbar />
         {children}
       </body>

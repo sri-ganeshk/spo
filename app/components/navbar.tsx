@@ -1,16 +1,26 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { Button } from "../components/ui/button";
 
 export function Appbar() {
   const [active, setActive] = useState<string | null>(null);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   const toggleDropdown = (item: string) => {
     setActive(active === item ? null : item);
   };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <div className="bg-black relative">
@@ -21,10 +31,12 @@ export function Appbar() {
         className="fixed top-0 z-50 w-full p-2"
       >
         <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
+          initial={{ opacity: 1, scale: 0.95, backgroundColor: "rgba(0,0,0,1)" }}
+          animate={{
+            backgroundColor: isScrolled ? "rgba(0,0,0,0.8)" : "rgba(0,0,0,1)",
+          }}
           transition={{ duration: 0.4, ease: "easeOut" }}
-          className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 backdrop-blur-xl rounded-2xl bg-black border border-neutral-700 shadow-lg"
+          className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 backdrop-blur-xl rounded-2xl border border-neutral-700 shadow-lg"
         >
           <div className="flex h-16 items-center justify-between relative text-white">
             {/* Logo */}
