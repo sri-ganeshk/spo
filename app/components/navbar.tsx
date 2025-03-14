@@ -7,7 +7,7 @@ import { Button } from "../components/ui/button";
 
 export function Appbar() {
   const [active, setActive] = useState<string | null>(null);
-  const [isScrolled, setIsScrolled] = useState(false);
+  const [bgOpacity, setBgOpacity] = useState(1);
 
   const toggleDropdown = (item: string) => {
     setActive(active === item ? null : item);
@@ -15,7 +15,10 @@ export function Appbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      const scrollY = window.scrollY;
+      // Calculate opacity: from 1 at scrollY=0 to 0.5 at scrollY>=200
+      const newOpacity = Math.max(0.45, 1 - scrollY / 200);
+      setBgOpacity(newOpacity);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -31,9 +34,9 @@ export function Appbar() {
         className="fixed top-0 z-50 w-full p-2"
       >
         <motion.div
-          initial={{ opacity: 1, scale: 0.95, backgroundColor: "rgba(0,0,0,1)" }}
+          initial={{ opacity: 1, scale: 1, backgroundColor: "rgba(0,0,0,1)" }}
           animate={{
-            backgroundColor: isScrolled ? "rgba(0,0,0,0.8)" : "rgba(0,0,0,1)",
+            backgroundColor: `rgba(0,0,0,${bgOpacity})`,
           }}
           transition={{ duration: 0.4, ease: "easeOut" }}
           className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 backdrop-blur-xl rounded-2xl border border-neutral-700 shadow-lg"
